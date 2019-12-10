@@ -17,7 +17,8 @@ fn main() -> ! {
     loop {}
 }
 
+#[allow(non_snake_case)]
 #[no_mangle]
-pub extern "C" fn HardFault() -> ! {
+pub fn HardFault(_ef: *const u32) -> ! {
     loop {}
 }

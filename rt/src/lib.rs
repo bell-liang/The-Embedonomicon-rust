@@ -58,7 +58,8 @@ pub union Vector {
 }
 extern "C" {
     fn NMI();
-    fn HardFaultTrampoline();
+	fn HardFault();
+    //fn HardFaultTrampoline();
     fn MemManage();
     fn BusFault();
     fn UsageFault();
@@ -71,7 +72,7 @@ extern "C" {
 #[no_mangle]
 pub static EXCEPTIONS: [Vector; 14] = [
     Vector { handler: NMI },
-    Vector { handler: HardFaultTrampoline },
+    Vector { handler: HardFault },
     Vector { handler: MemManage },
     Vector { handler: BusFault },
     Vector { handler: UsageFault },

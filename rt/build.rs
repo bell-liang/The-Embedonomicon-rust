@@ -17,7 +17,6 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     // rebuild if `asm.s` changed
     println!("cargo:rerun-if-changed=asm.s");
-    */
 
     // link to `librt.a`
     fs::copy("librt.a", out_dir.join("librt.a"))?; // <- NEW!
@@ -25,6 +24,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     // rebuild if `librt.a` changed
     println!("cargo:rerun-if-changed=librt.a"); // <- NEW!
+    */
 
     Ok(())
 }

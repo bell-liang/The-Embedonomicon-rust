@@ -28,7 +28,6 @@ SECTIONS
     *(.text .text.*);
   } > FLASH
 
-  /* NEW! */
   .rodata :
   {
     *(.rodata .rodata.*);
